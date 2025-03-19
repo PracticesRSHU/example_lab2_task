@@ -8,6 +8,9 @@ import NotFound from './components/NotFound';
 import Footer from './components/Footer';
 import Contacts from './components/Contacts';
 import News from './components/News';
+import Book from './components/books/Book';
+import BooksList from './components/books/BooksList';
+import BooksLayout from './components/books/BooksLayout';
 
 function App() {
   return (
@@ -18,19 +21,33 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route path="contacts" element={<Contacts/>} />
+              <Route path="/about" element={<About />} />
+            
+              {/* 
+              <Route path="/books" element={<BooksList />} />
+              <Route path="/books/:id" element={<Book />} />
+               OR  =====*/}
+               {/* /books/id */}
+               {/* /books/newbook */}
+               {/* /books/edit/id */}
+              <Route path="/books" element={<BooksLayout/>}>
+                <Route index element={<BooksList />} />
+                <Route path=":id" element={<Book/>} />
+                {/* <Route path="newbook" element={<Book />} /> */}
+                {/* <Route path="edit/:id" element={<Book />} /> */}
+              </Route>
+              <Route path="/contacts" element={<Contacts />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
           <aside>
-           <Routes>
-              <Route path="*" element={<News/>} />
-              <Route path="contacts" element={<Contacts/>} />
+            <Routes location="/">
+              <Route path="/" element={<News />} />
+              {/* <Route  path="contacts" element={<Contacts/>} /> */}
             </Routes>
           </aside>
         </div>
-      <Footer/>  
+        <Footer />
       </BrowserRouter>
     </>
   );
