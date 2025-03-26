@@ -11,6 +11,8 @@ import News from './components/News';
 import Book from './components/books/Book';
 import BooksList from './components/books/BooksList';
 import BooksLayout from './components/books/BooksLayout';
+import NewBook from './components/books/NewBook';
+import EditBook from './components/books/EditBook';
 
 function App() {
   return (
@@ -33,8 +35,8 @@ function App() {
               <Route path="/books" element={<BooksLayout/>}>
                 <Route index element={<BooksList />} />
                 <Route path=":id" element={<Book/>} />
-                {/* <Route path="newbook" element={<Book />} /> */}
-                {/* <Route path="edit/:id" element={<Book />} /> */}
+                <Route path="newbook" element={<NewBook/>} />
+                <Route path="edit/:id" element={<EditBook/>} />
               </Route>
               <Route path="/contacts" element={<Contacts />} />
               <Route path="*" element={<NotFound />} />

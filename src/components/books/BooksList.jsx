@@ -4,6 +4,7 @@ const BooksList = () => {
     const [books, setBooks]=useOutletContext();
     return (
         <div className="books">
+            <Link to="newbook">New Book</Link>
             <table className="book-tables">
                 <thead>
                     <tr>
@@ -11,6 +12,8 @@ const BooksList = () => {
                         <th>title</th>
                         <th>pages</th>
                         <th>imegas</th>
+                        <th>edit</th>
+                        <th>delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,6 +24,9 @@ const BooksList = () => {
                                     <td><Link to={`${b.id}`}>{b.title}</Link></td>
                                     <td>{b.pages}</td>
                                     <td><img style={{ width: "100px" }} src={b.path} /></td>
+                                    <td><Link to={`edit/${b.id}`}>Edit</Link></td>
+                                    <td>delete</td>
+
                                 </tr>
                             )
                         )
