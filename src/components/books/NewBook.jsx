@@ -78,7 +78,6 @@ const onSubmited=(newBook)=>{
     console.log(newBook);
     setBooks([...books,newBook]);
     navigate("/books");
-
 }
 
     return (
