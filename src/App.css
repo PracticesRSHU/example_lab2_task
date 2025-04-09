@@ -30,3 +30,8 @@ aside{
   flex: 3;
   background-color: rgb(165, 231, 234);
 }
+
+
+.counter{
+  display: flex;
+}

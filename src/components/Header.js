@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import FieldCounter from "./counters/FieldCounter";
 const Header = () => {
     return (
         <header>
@@ -10,9 +11,11 @@ const Header = () => {
                 <a href="#">About</a> */}
                 <Link to="/"> Home</Link>
                 <Link to="/about">About</Link>
+                <Link to="/counter">Counter Context</Link>
                 <Link to="/contacts">Contacts</Link>
                 <Link to="/books">books</Link>
             </nav>
+            <div>COUNT: <FieldCounter/> </div>
 
         </header>
     )
